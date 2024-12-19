@@ -1,16 +1,11 @@
 
 .header {
-    background-color:#1a355e;
+    background-color: #c51d2e;
     padding: 10px;
     position: sticky;
     top: 0;
-    width: 100%;  /* Ensures the header spans the entire width */
     display: flex;
-    flex: items-center;
     /* justify-content: space-between; */
-    
-
-    
 }
 .heading1 {
     margin-bottom:unset; 
@@ -21,4 +16,10 @@
 .heading_names{
     /* flex: auto; */
     font-size: 1.5rem;
+}
+.extraphoto{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 1%;
+    padding-right: 1%;
 }

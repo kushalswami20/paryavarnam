@@ -11,10 +11,10 @@ const Header = () => {
                 <h1 className='heading1'> International Conference on Transportation & Development </h1>
                 <p>In partnership with the Arizona Department of Transportation</p>
             </div>
-            <div className='extra photo'>
+            <div className='extraphoto'>
                 <img src='https://cdn.asce.org/asce-conferences/asce-ictd.org/s3fs-public/site-images/ictd-2025-banner.png'
                 alt=""
-                className='extra photo' />
+                className='extraphoto' />
             </div>
         </header>
     </div>

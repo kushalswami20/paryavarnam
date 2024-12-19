@@ -26,7 +26,7 @@ const Navbar = () => {
 
       {/* Right side: Navigation Links */}
       
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/"
                     className={`${location.pathname ==='/'}`}
@@ -34,7 +34,7 @@ const Navbar = () => {
                     Home
                   </Link>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/callforsubmission"
                     className={`${location.pathname ==='/callforsubmission'}`}
@@ -42,7 +42,7 @@ const Navbar = () => {
                     callforsubmission
                   </Link>
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/location"
                     className={`${location.pathname ==='/location'}`}
@@ -50,7 +50,7 @@ const Navbar = () => {
                     Location
                   </Link>
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/contact"
                     className={`${location.pathname ==='/contact'}`}
@@ -58,7 +58,7 @@ const Navbar = () => {
                     contact
                   </Link>
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/exhibitors"
                     className={`${location.pathname ==='/exhibitors'}`}
@@ -66,7 +66,7 @@ const Navbar = () => {
                     Exhibitors
                   </Link>
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 navbar-links">
                   <Link
                     to="/sponsors"
                     className={`${location.pathname ==='/sponsors'}`}

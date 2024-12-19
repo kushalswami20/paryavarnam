@@ -2,11 +2,13 @@ import React from 'react';
 import "./css/Home.css"
 import { Button } from './ui/button';
 import Navbar from "./shared/Navbar";
+import Header from './shared/Header';
 
 
 const Home = ()=>{
     return (
         <div className='home'>
+            <Header />
             
             <div className='firstpart'>
             <div className='bodyphoto'>
