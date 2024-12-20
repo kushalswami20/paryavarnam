@@ -1,54 +1,101 @@
-import React from 'react';
-import "./css/Home.css"
-import { Button } from './ui/button';
-import Navbar from "./shared/Navbar";
-import Header from './shared/Header';
+import React, { useRef, useEffect, useState } from 'react';
+import './css/Home.css';
+import video from "../assets/sample video.mp4"
+import Footer from './shared/Footer';
 
+const Home = () => {
+  const containerRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const pageCount = 3;
 
-const Home = ()=>{
-    return (
-        <div className='home'>
-            <Header />
-            
-            <div className='firstpart'>
-            <div className='bodyphoto'>
-                <img src='https://cdn.asce.org/asce-conferences/asce-ictd.org/hero-images/ictd-2025-glendale-az-hero.jpg?VersionId=hdWHFlwcEBvqjtdjzVSvbUkoKbjkNNx_'
-                alt="Glendale"
-                className='bodyphoto' />
-            </div>
-            <section id= "block" >
-                <article>
-                    <div>
-                        <div className='content'>
-                            <p className='text-black'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium recusandae eos iste consequatur dolore tenetur debitis in aperiam sit rem. Sint facilis laborum libero eaque vel natus reprehenderit, delectus explicabo!</p>
-                            <p className='text-black'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque deleniti a laudantium est accusantium dolorum. Dolorem totam aperiam excepturi voluptates, dolores ipsam tempore neque molestiae. Qui neque doloremque libero ipsum?</p>
+  useEffect(() => {
+    const container = containerRef.current;
+    
+    const handleWheel = (e) => {
+      e.preventDefault();
+      
+      // Incremental scroll with smaller steps
+      const scrollStep = 0.03;
+      
+      if (e.deltaY > 0) {
+        setScrollProgress(prev => Math.min(prev + scrollStep, pageCount - 1));
+      } else {
+        setScrollProgress(prev => Math.max(prev - scrollStep, 0));
+      }
+    };
 
-                        </div>
-                        <h2>contribute to conference</h2>
-                        <Button variant="outline">Button</Button>
-                        <h2>coference co-chairs</h2>
-                        <div className='aboutpeople'>
-                            <img src= 
-                            'https://cdn.asce.org/asce-conferences/asce-ictd.org/hero-images/ictd-2025-glendale-az-hero.jpg?VersionId=hdWHFlwcEBvqjtdjzVSvbUkoKbjkNNx_'
-                            alt="Glendale"
-                            className='aboutpeople'
-                            width="189"
-                            height="189" />
-                            <em className='text'>director , erizona</em>
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
-
-                        </div>
-                    </div>
-                </article>
-            </section>
-            </div>
-            <div>
-                <img src="https://cdn.asce.org/asce-conferences/asce-ictd.org/venue/renaissance-hotel-glendale-az.jpg?VersionId=cXo0U_E5D_dXnAjKZfSH6P9ByebuV8vS"
-                alt="pic"
-                className='pic' />
-                
-            </div>
+  return (
+    <div className="scroll-container">
+      {/* Right Side Progress Bar */}
+      {/* <div className="progress-bar">
+        <div className="progress-track">
+          <div 
+            className="progress-thumb"
+            style={{
+              height: `${(1 / pageCount) * 100}%`,
+              top: `${(scrollProgress / (pageCount - 1)) * 100}%`
+            }}
+          />
         </div>
-    )
-} 
-export default  Home;  //exporting the component to use it in other files
+        <div className="progress-number">
+          {Math.floor(scrollProgress + 1)} / {pageCount}
+        </div>
+      </div> */}
+
+      {/* Main Content */}
+      <div 
+        ref={containerRef} 
+        className="page-container"
+        style={{ 
+          transform: `translateX(-${scrollProgress * 100}%)`,
+          width: `${pageCount * 33.3333333}%`
+        }}
+      >
+        <div className="page page-1">
+          <div className="video-overlay">
+            <video 
+              className="background-video" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            >
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="page-content">
+            <h1>Sample</h1>
+            <p>Smooth Incremental Scrolling</p>
+          </div>
+        </div>
+
+        <div className="page page-2">
+          <div className="page-content">
+            <h1>Discover</h1>
+            <p>Gradual Page Transitions</p>
+          </div>
+        </div>
+
+        <div className="page page-3">
+          <div className="page-content">
+            <h1>Experience</h1>
+            <p>Seamless Navigation</p>
+          </div>
+          <div className="footer-container">
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;

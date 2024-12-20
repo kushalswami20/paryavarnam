@@ -1,6 +1,6 @@
 /* Styling for the Navbar */
 .navbar {
-    background-color: #c13d9d; /* Dark background */
+    background-color: white; /*Dark background white*/
     padding: 15px 20px;
     display: flex;
     justify-content: space-between; /* Space between logo and links */
@@ -28,13 +28,13 @@
   
   /* Links */
   .navbar-links a {
-    color: white;
+    color: #C1121f;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
   }
   
   .navbar-links a:hover {
-    color: #ddd; /* Lighten color on hover */
+    color: black; /* Lighten color on hover */
   }
   

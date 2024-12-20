@@ -1,25 +1,231 @@
-body{
+/* Base Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fae7e9;
-}
-h2{
-    font-weight: bold;
-    font-size:  24px;
-}
-.text{
-    margin:0 0 10px 0;
-}
-.aboutpeople{
-    display:flex;
-    align-items: center;  /* Vertically centers items */
-    margin: 10px;
-}
-
-.firstpart{
-    flex-direction: column;
-}
-
-.bodyphoto{
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+  /* Container Styles */
+  .scroll-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    overflow: hidden;
+  }
+  
+  /* Page Container Styles */
+  .page-container {
+    display: flex;
+    height: 100vh;
+    transition: transform 0.3s ease-out;
+    width: 300%; /* 3 pages */
+  }
+  
+  .page {
     width: 100%;
-}
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .page-1 {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+    z-index: 2;
+  }
+  
+  .page-1 .page-content {
+    position: relative;
+    z-index: 3;  /* Ensure content appears above video */
+  }
+  .page-2 { background-color: #22c55e; }
+  .page-3 { background-color: #a855f7; }
+  
+  .page-content {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .page-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .page-content p {
+    font-size: 1.25rem;
+  }
+  
+  /* Progress Bar Styles */
+  /* .progress-bar {
+    position: fixed;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+  }
+  
+  .progress-track {
+    width: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    height: 15rem;
+    position: relative;
+  }
+  
+  .progress-thumb {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.5rem;
+    background-color: white;
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+  }
+  
+  .progress-number {
+    color: white;
+    font-size: 0.75rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5rem;
+  } */
+  
+  /* Bugatti Scroll Indicator Styles */
+  /* .scroll-indicator-wrapper {
+    position: fixed;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
+    z-index: 50;
+  }
+  
+  .bugatti-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce-custom 2s infinite;
+  }
+  
+  .scroll-label {
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.2em;
+  } */
+  .footer-container{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5%;
+    width:100%
+  }
+  
+  /* Animations */
+  @keyframes bounce-custom {
+    0%, 100% { 
+      transform: translateY(0);
+    }
+    50% { 
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes scroll-line-1 {
+    0% { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    33% { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+    66% { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes scroll-line-2 {
+    0% { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    33% { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    66% { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes scroll-line-3 {
+    0% { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    33% { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    66% { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Animation Classes */
+  .scroll-line-1 {
+    animation: scroll-line-1 3s infinite;
+    transform-origin: 0 0;
+  }
+  
+  .scroll-line-2 {
+    animation: scroll-line-2 3s infinite;
+    transform-origin: 0 0;
+  }
+  
+  .scroll-line-3 {
+    animation: scroll-line-3 3s infinite;
+    transform-origin: 0 0;
+  }
