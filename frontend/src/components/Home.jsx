@@ -3,6 +3,7 @@ import "./css/Home.css"
 import { Button } from './ui/button';
 import Navbar from "./shared/Navbar";
 import Header from './shared/Header';
+import Footer from './shared/Footer';
 
 
 const Home = ()=>{
@@ -48,6 +49,8 @@ const Home = ()=>{
                 className='pic' />
                 
             </div>
+
+            <Footer/>
         </div>
     )
 } 
