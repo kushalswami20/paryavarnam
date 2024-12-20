@@ -15,67 +15,18 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Left side: Logo or brand */}
-      <div className="navbar-logo">
-        <img 
-          src="https://via.placeholder.com/100x50" 
-          alt="Logo" 
-          className="logo"
-        />
+      <div className="nav-logo">
+        <img src="https://via.placeholder.com/100x50" alt="Logo" className="logo"/>
       </div>
-
-      {/* Right side: Navigation Links */}
-      
-      <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/"
-                    className={`${location.pathname ==='/'}`}
-                  >
-                    Home
-                  </Link>
-        </div>
-        <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/callforsubmission"
-                    className={`${location.pathname ==='/callforsubmission'}`}
-                  >
-                    callforsubmission
-                  </Link>
-                  </div>
-                  <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/location"
-                    className={`${location.pathname ==='/location'}`}
-                  >
-                    Location
-                  </Link>
-                  </div>
-                  <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/contact"
-                    className={`${location.pathname ==='/contact'}`}
-                  >
-                    contact
-                  </Link>
-                  </div>
-                  <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/exhibitors"
-                    className={`${location.pathname ==='/exhibitors'}`}
-                  >
-                    Exhibitors
-                  </Link>
-                  </div>
-                  <div className="flex space-x-4 navbar-links">
-                  <Link
-                    to="/sponsors"
-                    className={`${location.pathname ==='/sponsors'}`}
-                  >
-                    sponsors
-                  </Link>
-                  </div>
-                  
-      
+      <nav class="skew-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Registration</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </nav>
   );
 };
