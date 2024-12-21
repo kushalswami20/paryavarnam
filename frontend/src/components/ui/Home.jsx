@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/Home.css';
 import Poster from "../../assets/poster.png"
-import Footer from '../shared/Footer';
 
 const Home = () => {
   return (
@@ -72,9 +71,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div className="footer">
-        <Footer />
-      </div>
     </div>
   );
 };

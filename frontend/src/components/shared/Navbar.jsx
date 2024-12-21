@@ -1,30 +1,38 @@
 import React from 'react';
-import { Menu, Search, User } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  // const location = useLocation();
-  const isHomePage = location.pathname === '/';
-  const callforsubmission = location.pathname === '/callforsubmission';
-  const locationPage = location.pathname === '/location';
-  const contact = location.pathname === '/contact';
-  const exhibitors = location.pathname === '/exhibitors';
-  const sponsors = location.pathname === '/sponsors';
+  const location = useLocation();
+
+  const navLinks = [
+    { path: '/', label: 'Home' },
+    { path: '/registration', label: 'Registration' },
+    { path: '/resources', label: 'Resources' },
+    { path: '/team', label: 'Team' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/contact', label: 'Contact' }
+  ];
 
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <img src="https://via.placeholder.com/100x50" alt="Logo" className="logo"/>
+        <Link to="/">
+          <img src="https://via.placeholder.com/100x50" alt="Logo" className="logo"/>
+        </Link>
       </div>
-      <nav class="skew-menu">
+      <nav className="skew-menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Registration</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Contact</a></li>
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link 
+                to={link.path}
+                className={location.pathname === link.path ? 'active' : ''}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </nav>

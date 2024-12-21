@@ -4,11 +4,13 @@ body{
 }
 
 .poster-image {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: block;
-  margin: 60px 0;
+  margin: 60px auto;
   object-fit: cover;
+  border: 1px solid black;
+  border-radius: 2%;
 }
 
 :root {
@@ -130,7 +132,7 @@ body{
 /* Sponsors Section */
 .sponsors-section {
   padding: 4rem 0;
-  background-color: var(--yellow-card);
+  background-color: var(--yellow-bg);;
   margin: 4rem 0;
 }
 
