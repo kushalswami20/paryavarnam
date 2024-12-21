@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/shared/Header"
 import Footer from './components/shared/Footer'
 import Navbar from './components/shared/Navbar'
-import Home from './components/Home'
+import Home from './components/ui/Home'
 import Contact from './components/Contact'
 import Exhibitors from './components/Exhibitors'
 import Sponsors from './components/Sponsors'
