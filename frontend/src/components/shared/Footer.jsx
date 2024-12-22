@@ -1,59 +1,65 @@
 import React from 'react';
-import "../css/Footer.css";
+import { Link, useLocation } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone } from 'lucide-react';
+import '../css/Footer.css'
+
 const Footer = () => {
+    const location = useLocation();
+    
+    const handleLinkClick = (e) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
-        <footer className="foot">
-            <footer class="footer">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>About Us</h3>
-                        <ul>
-                            <li><a href="#">Our Story</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Press</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="#">Solutions</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Documentation</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Community</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-section">
-                        <h3>Connect With Us</h3>
-                        <div class="social-links">
-                            <a href="#" aria-label="Facebook">📱</a>
-                            <a href="#" aria-label="Twitter">💬</a>
-                            <a href="#" aria-label="LinkedIn">👥</a>
-                            <a href="#" aria-label="Instagram">📷</a>
-                        </div>
-                        <div class="contact-info">
-                            <p>Email: contact@example.com</p>
-                            <p>Phone: (555) 123-4567</p>
-                        </div>
-                    </div>
+        <footer className="footer">
+            <div className="footer-content two-columns">
+                <div className="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul className="two-column-list">
+                        <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
+                        <li><Link to="/registration" onClick={handleLinkClick}>Registration</Link></li>
+                        <li><Link to="/resources" onClick={handleLinkClick}>Resources</Link></li>
+                        <li><Link to="/team" onClick={handleLinkClick}>Team</Link></li>
+                        <li><Link to="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
+                        <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+                    </ul>
                 </div>
 
-                <div class="bottom-bar">
-                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                <div className="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div className="social-links">
+                        <a href="#" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
+                            <Facebook size={20} />
+                        </a>
+                        <a href="#" aria-label="Twitter" onClick={(e) => e.preventDefault()}>
+                            <Twitter size={20} />
+                        </a>
+                        <a href="#" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}>
+                            <Linkedin size={20} />
+                        </a>
+                        <a href="#" aria-label="Instagram" onClick={(e) => e.preventDefault()}>
+                            <Instagram size={20} />
+                        </a>
+                    </div>
+                    <div className="contact-info">
+                        <p>
+                            <Mail size={16} />
+                            <span>contact@example.com</span>
+                        </p>
+                        <p>
+                            <Phone size={16} />
+                            <span>(555) 123-4567</span>
+                        </p>
+                    </div>
                 </div>
-            </footer>
+            </div>
+
+            <div className="bottom-bar">
+                <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+            </div>
         </footer>
     );
 };
