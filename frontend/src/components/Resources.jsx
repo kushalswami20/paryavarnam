@@ -1,11 +1,35 @@
 import React from 'react';
-import './css/Resources.css'
+import './css/Resources.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+    faBook,
+    faLaptopCode,
+    faTrophy,
+    faTools,
+    faPalette,
+    faDownload,
+    faFileAlt,
+    faChalkboardTeacher,
+    faChartLine,
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+    faBook,
+    faLaptopCode,
+    faTrophy,
+    faTools,
+    faPalette,
+    faDownload,
+    faFileAlt,
+    faChalkboardTeacher,
+    faChartLine
+);
 
 const Resources = () => {
     return (
-        <div className='resources'>
+        <div className="resources">
             <header className="header header-with-bg">
-                {/* Parallax background for header only */}
                 <div className="header-background"></div>
                 <div className="header-content">
                     <h1>Resource Hub</h1>
@@ -19,7 +43,7 @@ const Resources = () => {
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-book"></i>
+                                <FontAwesomeIcon icon="book" />
                             </div>
                             <h3>Getting Started Guide</h3>
                             <p>New to hackathons? Start here for a comprehensive introduction to ideation, prototyping, and presentation.</p>
@@ -28,7 +52,7 @@ const Resources = () => {
 
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-laptop-code"></i>
+                                <FontAwesomeIcon icon="laptop-code" />
                             </div>
                             <h3>Technical Workshops</h3>
                             <p>Access recorded workshop sessions on web development, AI/ML, cloud computing, and more.</p>
@@ -37,7 +61,7 @@ const Resources = () => {
 
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-trophy"></i>
+                                <FontAwesomeIcon icon="trophy" />
                             </div>
                             <h3>Past Winners Showcase</h3>
                             <p>Learn from previous winning projects and understand what makes a great submission.</p>
@@ -51,7 +75,7 @@ const Resources = () => {
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-tools"></i>
+                                <FontAwesomeIcon icon="tools" />
                             </div>
                             <h3>Development Tools</h3>
                             <p>Access to premium development tools and environments, including cloud credits and API keys.</p>
@@ -60,7 +84,7 @@ const Resources = () => {
 
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-palette"></i>
+                                <FontAwesomeIcon icon="palette" />
                             </div>
                             <h3>Design Resources</h3>
                             <p>Free access to design tools, UI kits, and stock assets for your project.</p>
@@ -69,7 +93,7 @@ const Resources = () => {
 
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-download"></i>
+                                <FontAwesomeIcon icon="download" />
                             </div>
                             <h3>Software Downloads</h3>
                             <p>Curated list of recommended software and tools for different project types.</p>
@@ -83,7 +107,7 @@ const Resources = () => {
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-file-alt"></i>
+                                <FontAwesomeIcon icon="file-alt" />
                             </div>
                             <h3>Project Documentation</h3>
                             <p>Templates for project documentation, including technical specifications and user guides.</p>
@@ -92,16 +116,17 @@ const Resources = () => {
 
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-presentation"></i>
+                                <FontAwesomeIcon icon="chalkboard-teacher" />
                             </div>
                             <h3>Presentation Templates</h3>
                             <p>Professional slide templates for your final project presentation.</p>
                             <a href="#" className="resource-link">Download Templates →</a>
                         </div>
 
+
                         <div className="resource-card">
                             <div className="icon">
-                                <i className="fas fa-chart-line"></i>
+                                <FontAwesomeIcon icon="chart-line" />
                             </div>
                             <h3>Business Plan Templates</h3>
                             <p>Templates to help you develop the business aspect of your innovation.</p>
