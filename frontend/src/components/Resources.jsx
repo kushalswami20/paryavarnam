@@ -109,14 +109,6 @@ const Resources = () => {
                         </div>
                     </div>
                 </section>
-
-                <section className="contact-section">
-                    <div className="contact-content">
-                        <h2>Need Additional Resources?</h2>
-                        <p>Can't find what you're looking for? Our team is here to help you succeed.</p>
-                        <button className="contact-button">Contact Support</button>
-                    </div>
-                </section>
             </div>
         </div>
     );

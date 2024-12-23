@@ -5,11 +5,13 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/shared/Footer'
 import Navbar from './components/shared/Navbar'
-import Home from './components/ui/Home'
+import Home from './components/Home'
 import Sponsors from './components/Sponsors'
 import Resources from './components/Resources'
 import Team from './components/Team'
 import Gallery from './components/Gallery'
+import Registration from './components/Registration'
+import Contact from './components/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,8 @@ function App() {
       <Route path="/team" element= {<Team />} />
       <Route path="/Gallery" element= {<Gallery />} />
       <Route path="/sponsors" element= {<Sponsors />} />
+      <Route path="/registration" element= {<Registration />} />
+      <Route path="/contact" element= {<Contact />} />
       </Routes>
       <Footer/>
     </Router>

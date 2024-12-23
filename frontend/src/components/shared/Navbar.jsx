@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css';
+import Virina from '../../assets/virina.avif'
 
 const Navbar = () => {
   const location = useLocation();
@@ -17,8 +18,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <Link to="/">
-          <img src="https://via.placeholder.com/100x50" alt="Logo" className="logo"/>
+        <Link to="https://www.virinafoundation.com/">
+          <img src={Virina} alt="Logo" className="logo"/>
         </Link>
       </div>
       <nav className="skew-menu">

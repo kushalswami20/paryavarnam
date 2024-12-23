@@ -91,6 +91,7 @@ body {
 
 .container {
     background: var(--background-light);
+    margin: auto;
     padding: 40px 20px;
 }
 
@@ -177,45 +178,6 @@ body {
     border-bottom: 2px solid var(--secondary-color);
 }
 
-/* Contact Section Styles */
-.contact-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border-radius: 10px;
-    padding: 40px;
-    margin-top: 60px;
-    text-align: center;
-    color: var(--text-light);
-    position: relative;
-    z-index: 2;
-}
-
-.contact-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.contact-content p {
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
-
-.contact-button {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: var(--secondary-dark);
-    transform: translateY(-2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -237,9 +199,5 @@ body {
 
     .resource-card {
         padding: 20px;
-    }
-
-    .contact-section {
-        padding: 30px 20px;
     }
 }
